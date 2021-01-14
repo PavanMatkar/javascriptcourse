@@ -1,0 +1,37 @@
+Introduction
+------------
+    -Javascript is the scripting language
+    -Javascript released by Netscape
+    -Current Version of Javascript is ES11(ES2020)
+    -ES stands for ECMA SCRIPT 
+    -we will execute Javascript with the help of "browsers" or "node" tool
+    -"node" tool present in NodeJS
+
+    Ex.
+        Google Chrome
+        Mozilla
+        Opera
+        Netscape Navigator
+        -----
+        -----
+        -----
+
+    -Intrepretor present in Browser Engine helps to execute the Javascript line by line
+    -By default Javascript is the Synchronous
+    -we will save Javascript files with ".js" extension
+    -Recommended IDE to develop Javascript is Visual Studio Code
+    -VS Code given by Microsoft, and Open Source
+    -Javascript is the Object Based scripting language
+    -Vendor provides so many predefined Objects like window,
+                                                    document
+                                                    console
+                                                    Date
+                                                    Time
+    1)download and install NodeJS
+    "node" is the tool present in NodeJS, helps to execute the Javascript.
+    website:    https://node.js.org/en/download/
+    file:       node-v14.15.2 - x 64.Microsoft
+        msi stands for Microsoft Installer
+    2)download and install Visual Studio Code 
+    website:    https://code.visualstudio.com/download
+    file:       vscode User Setup -x64-1.52.0. exe
