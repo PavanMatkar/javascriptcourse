@@ -1,0 +1,71 @@
+<!--
+    function
+    --------
+        -particular business logic called as function
+        -functions are used to reuse the business logic
+        -we have following types of functions upto ES11
+            1)Named Functions
+            2)Anonymous Functions /Arrow Functions /Fat Arrow Functions  /CallBack Functions /Lamda Functions
+            3)Rest parameters in Functions.
+            4)Optional Parameters in Functions.
+            5)Default Parameters in Functions.
+            6)IIFE (Immediate Invocable Functional Expressions)
+            7)Generators
+            8)Constructor Functions
+    Named Functions
+    ---------------
+        -The function with the name called as Named function.
+        Syntax
+            function definition
+            -------------------
+            function functionname(parameters){
+                //business logic
+            };
+            //call the function
+            functionname(parameters)    
+-->
+
+<!--
+    <script>
+        function fun_one(){
+            return "Welcome to named functions";
+        };
+        console.log( fun_one );     //definition
+        console.log( fun_one() );       //Welcome to named functions
+    </script>
+-->
+
+<!--
+    <script>
+        function fun_one(arg1,arg2,arg3){
+            return `${arg1} <==> ${arg2} <==> ${arg3}`;
+        };
+        console.log( fun_one() );       //undefined <==> undefined <==> undefined
+        console.log( fun_one(null,null,null) );     //null <==> null <==> null
+        console.log( fun_one("Angular", "NodeJS", "MongoDB") )
+    </script>
+-->
+<!--
+    <script>
+        function fun_one(){
+            return fun_two;
+        };
+        function fun_two(){
+            return "Hello";
+        };
+        console.log( fun_one()() );     //Hello
+    </script>
+-->
+
+<script>
+    let arr = [];
+    function fun_one(){
+        return "hello";
+    };
+    for (var i=0;i<5;i++){
+        arr.push( fun_one );
+    };
+    arr.forEach((element,index)=>{
+        console.log( element() );
+    });
+</script>
