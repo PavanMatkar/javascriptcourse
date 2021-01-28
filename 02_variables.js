@@ -133,3 +133,92 @@ console.log(data);      //let:100       //var:200
 //we can overcome global polluting issue by using let keyword
 
 
+/*
+    //global variable
+    let data = 100;
+    //block
+    {
+        //local variable
+        let data = 200;
+    }
+    console.log(data);      //let:100     //var:200
+    //if global member effected by local member called as global polluting issue
+    //global polluting issue raised because of var keyword
+    //we can overcome global polluting issue by using let keyword
+/*
+
+/*
+    let data = 100;
+    let data = 200;
+    console.log(data);      //let:SyntaxError:Identifier 'data' has already been declared   //var:200
+    //var keyword allows the duplicate variables
+    //let keyword won't allows the duplicate variables
+*/
+
+/*
+console.log(data);      //let:Error     //var:undefined
+var data = 100;
+//accessing the variables with undefined value, before its declaration and initialization called as variable hoisting
+//"var" keyword allows the variable hoisting
+//we can overcome variable hoisting by using "let" keyword
+*/
+
+/*
+    for(let i=0;i<5;i++){
+        setTimeout(()=>{
+            console.log(i);
+        },5000);
+    };      //var:5 5 5 5 5     let:0 1 2 3 4
+*/
+
+
+
+/**********************************************************************************
+                var                                         let
+    var keyword introduced in ES11              let keyword introduced in ES6
+    
+    duplicate variables allowed                 won't allows the dupclicate variables
+
+    global polluting issue raised               we can overcome global polluting issue
+
+    variable hoisting issue raised              we can overcome variable hoisting issue
+
+    scope rule break by var keyword             scope rule obey by let keyword
+ **********************************************************************************/
+
+ //const 
+ //we can't modify the data (const)
+ //ES6
+ const data = 100;
+ console.log(data);     //100
+ //data = 200;      //TypeError:Assignment to constant variable
+
+ /*
+    const obj1 = {wish: "ReactJS"};
+    console.log(obj1);      //{wish: "ReactJS"}
+    //obj1 = {};    //TypeError:Assignment to constant variable
+    obj1.wish = "Welcome to ES11";
+    console.log(obj1);      //{wish:"Welcome to ES11"}
+    //obj1 = {wish: "Welcome to ReactJS"};      //TypeError: Assignment to constant variable  
+*/
+
+/*
+const obj1 = {key1: 'Hello_1', key2: 'Hello-2'};
+console.log(obj1);  //{key1: 'Hello_1', key2: 'Hello_2'};
+//obj1 = {};        //TypeError:Assignment to constant variable
+//obj1 = {key1: "Welcome_1", key2: "Welcome_2"};        //TypeError:Assignment to constant variable
+obj1.key1 = "Welcome_1";
+obj1.key2 = "Welcome_2";
+console.log(obj1);      //{key1: "Welcome_1", key2: "Welcome_2"}
+const arr = [10, 20, 30, 40, 50];
+console.log(arr);       //[10, 20, 30, 40, 50]
+//arr = [];        //TypeError:Assignment to constant variable
+//arr = [100, 200, 300, 400, 500];      //TypeError: Assignment to constant variable
+arr[0] = 100;
+arr[1] = 200;
+arr[2] = 300;
+arr[3] = 400;
+arr[4] = 500;
+console.log(arr);       //[100, 200, 300, 400, 500]
+//direct change of values not possible, but we can change independently.
+*/
