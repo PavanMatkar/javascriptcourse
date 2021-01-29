@@ -370,9 +370,76 @@
      console.log(obj.var_one,obj.var_two,obj.fun_one(),obj.fun_two());      //Hello_1 Hello_3 Hello_2 Hello_4
  </script>
   -->
+<!-- 
+    <script>
+        function ParentF(){
 
+        };
+        ParentF.prototype.mean = function(){
+            return "MEAN Stack....!";
+        };
+        function ChildF(){
 
+        };
+        ChildF.prototype = Object.create(ParentF.prototype);
+        ChildF.prototype.mern = function(){
+            return "MERN Stack....!";
+        };
+        function SubchildF(){
+            
+        };
+        SubchildF.prototype = Object.create(ChildF.prototype);
+        SubchildF.prototype.mevn = function(){
+            return "MEVN Stack....!";
+        };
+        let obj = new SubchildF();
+        console.log( obj.mean(),obj.mern(),obj.mevn() );      //MEAN Stack....! MERN Stack....! MEVN Stack....!
+    </script>
+ -->
+ <!--
+     overriding parent class functionality with child class functionality called as prototype overriding
 
+     <script>
+         function Parent(){
+
+         };
+         Parent.prototype.dbFun = function(){
+             return "Data From OracleDB Soon...!";
+         };
+         function Child(){
+
+         };
+         Child.prototype = Object.create(Parent.prototype);
+         Child.prototype.dbFun = function (){
+             return "Data From MongoDB Soon...!";
+         };
+         let obj = new Child();
+         console.log(obj.dbFun());      //Data From MongoDB Soon...!
+     </script>
+ -->
+ <!--
+     functionality overloading
+     same function with different argument called as function overloading
+ -->
+
+ <script>
+     function class_one(){
+
+     };
+     class_one.prototype.add = function(arg1,arg2){
+         return arg1 + arg2;
+     };
+     class_one.prototype.add = function(arg1,arg2,arg3){
+         return arg1 + arg2 + arg3;
+     };
+     class_one.prototype.add = function(arg1,arg2,arg3,arg4){
+         return arg1 + arg2 + arg3 + arg4;
+     };
+     let obj = new class_one();
+     console.log( obj.add(10,10) );         //NaN
+     console.log( obj.add(10,10,10) );      //NaN
+     console.log( obj.add(10,10,10,10) );   //40
+ </script>
 
 
 
