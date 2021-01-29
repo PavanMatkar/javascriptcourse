@@ -1,51 +1,53 @@
 <!--
-    function
-    --------
-        -particular business logic called as function
-        -functions are used to reuse the business logic
-        -we have following types of functions upto ES11
-            1)Named Functions
-            2)Anonymous Functions /Arrow Functions /Fat Arrow Functions  /CallBack Functions /Lamda Functions
-            3)Rest parameters in Functions.
-            4)Optional Parameters in Functions.
-            5)Default Parameters in Functions.
-            6)IIFE (Immediate Invocable Functional Expressions)
-            7)Generators
-            8)Constructor Functions
-    Named Functions
-    ---------------
-        -The function with the name called as Named function.
-        Syntax
-            function definition
-            -------------------
-            function functionname(parameters){
-                //business logic
-            };
-            //call the function
-            functionname(parameters)    
--->
+        function
+        ---------
+            - particular business logic called as function
+            - functions are used to reuse the business logic
+            - we have following types of functions upto ES11
+                1)Named Functions
+                2)Anonymous Functions /Arrow Functions /Fat Arrow Functions  /CallBack Functions /Lamda Functions
+                3)Rest parameters in Functions.
+                4)Optional Parameters in Functions.
+                5)Default Parameters in Functions.
+                6)IIFE (Immediate Invocable Functional Expressions)
+                7)Generators
+                8)Constructor Functions
+        Named Functions
+        ---------------
+            -The function with the name called as Named function.
+            Syntax
+                function definition
+                -------------------
+                function functionname(parameters){
+                    //business logic
+                };
+                //call the function
+                functionname(parameters)    
+    -->
 
-<!--
+<!-- 
     <script>
         function fun_one(){
             return "Welcome to named functions";
         };
         console.log( fun_one );     //definition
         console.log( fun_one() );       //Welcome to named functions
-    </script>
+    </script> 
 -->
 
-<!--
-    <script>
+
+<!-- 
+     <script>
         function fun_one(arg1,arg2,arg3){
             return `${arg1} <==> ${arg2} <==> ${arg3}`;
         };
         console.log( fun_one() );       //undefined <==> undefined <==> undefined
         console.log( fun_one(null,null,null) );     //null <==> null <==> null
-        console.log( fun_one("Angular", "NodeJS", "MongoDB") )
-    </script>
+        console.log( fun_one("Angular", "NodeJS", "MongoDB") )    //Angular <==> NodeJS <==> MongoDB
+    </script> 
 -->
-<!--
+
+<!-- 
     <script>
         function fun_one(){
             return fun_two;
@@ -54,10 +56,11 @@
             return "Hello";
         };
         console.log( fun_one()() );     //Hello
-    </script>
+    </script> 
 -->
 
-<!--
+
+<!-- 
 <script>
     let arr = [];
     function fun_one(){
@@ -69,23 +72,9 @@
     arr.forEach((element,index)=>{
         console.log( element() );
     });
-</script>
+</script> 
 -->
 
-<!--
-    <script>
-        let arr = [];
-        function fun_one(){
-            return "hello";
-        };
-        for(var i=0;i<5;i++){
-            arr.push( fun_one );
-        };
-        arr.forEach((element,index)=>{
-            console.log(element());
-        });
-    </script>
--->
 
 <!--
     Anonymous Functions
@@ -191,3 +180,234 @@
         //Uncaught Syntax Error: Rest parameter must be last formal parameter
     </script>
 -->
+<!-- 
+    <script>
+        function fun_one(arg1,...arg2){
+            console.log(arg1,arg2);
+        };
+        fun_one("Hello_1");     //Hello_1 []
+        fun_one();              //undefined[]
+        fun_one("Hello_1","Hello_2","Hello_3");     //Hello_1 ["Hello_2", "Hello_3"]
+        fun_one(null,null);     //null [null]
+    </script> 
+-->
+
+<!--
+    Default Parameters in functions
+        -while defining the functions, we will assign parameters with default values.
+        -this concept also introduced in ES6.
+        -we can have more than one default parameter.
+-->
+<!-- 
+    <script>
+        function fun_one(arg1="ReactJS",arg2="NodeJS",arg3="MongoDB"){
+            console.log(arg1,arg2,arg3);
+        };
+        fun_one();      //ReactJS NodeJS MongoDB
+        fun_one("Angular11");       //Angular11 NodeJS MongoDB
+        fun_one(undefined,undefined,undefined);     //ReactJS NodeJS MongoDB
+        fun_one(null,null,null);        //null null null
+        fun_one(undefined,undefined,"Deno");    //ReactJS NodeJS Deno
+    </script>
+ -->
+<!-- 
+ <script>
+     function fun_one(arg1,arg2=[],arg3={}){
+         console.log(arg1,arg2,arg3);
+     }
+     fun_one();     //undefined [] {}
+     fun_one("Hello_1");    //Hello_1 [] {}
+     fun_one("Hello_1",["Hello_2"],{key1:"Hellol_3"});      //Hello_1 ["Hello_2"] {key1: "Hellol_3"}
+     fun_one(undefined,undefined,undefined);        //undefined [] {}
+     fun_one(null,null,null);       //null null null
+ </script>
+ -->
+<!-- 
+    <script>
+        function fun_one(arg1,arg2="Hello_2",...arg3){
+            console.log(arg1,arg2,arg3);
+        };
+        fun_one();             //undefined "Hello_2" []
+        fun_one("Hello1");     //Hello1 Hello_2 []
+        fun_one("Hello_1",undefined,"Hello_3");        //Hello_1 Hello_2 ["Hello_3"]
+        fun_one(null,null,null);       //null null [null]
+    </script>
+ -->
+ <!-- 
+     IIFE
+     ----
+        - Immediate Invocable Functional Expression
+        - IIFE Introduced in ES9
+        - IIFE functions also called as "self invocable functions"
+
+        syntax
+        ------
+        ((arg1,arg2,arg3,.....)=>{
+            //business logic
+        })(param1,param2,param3,....)
+  -->
+<!-- 
+    <script>
+        (()=>{
+            console.log("Welcome to IIFE");
+        })();       //Welcome to IIFE
+    </script>
+ -->
+<!-- 
+    <script>
+        ((arg1,arg2,arg3)=>{
+            console.log(arg1,arg2,arg3);
+        })("Angular","Node","MongoDB");     //Angular Node MongoDB
+    </script>
+ -->
+<!-- 
+    <script>
+        let res = ((arg1,arg2,arg3)=>{
+            return `${arg1}<==>${arg2}<==>${arg3}`
+        })("ReactJS","Deno","MongoDB");
+        console.log(res);      //ReactJS<==>Deno<==>MongoDB
+    </script>
+ -->
+<!-- 
+    <script>
+        for(var i=0;i<5,i++;){
+            ((i)=>{
+                setTimeout(()=>{
+                    console.log(i);
+                },5000)
+            })(i)
+        };                          //Expected Ans: 0 1 2 3 4 (after 5 sec)
+    </script>
+ -->
+ 
+ <!-- 
+     Constructor Functions
+        - we will create classes like structures by using "Constructor Functions".
+        - in constructor functions all the members (variables and functions) starts with "this" keyword.
+        - we will create object to the constructor functions by using "new" keyword.
+
+    
+    <script>
+        function class_one(){
+            this.sub_one = "Angular11";
+            this.sub_two = "NodeJS";
+            this.sub_three = "MongoDB";
+        };
+        let obj = new class_one();
+        console.log(obj.sub_one,obj.sub_two,obj.sub_three);     //Angular11 NodeJS MongoDB
+    </script>
+ -->
+
+<!-- 
+    <script>
+        function class_one(arg1,arg2,arg3){
+            this.sub_one = arg1;
+            this.sub_two = arg2;
+            this.sub_three = arg3;
+        };
+        let obj = new class_one("Angular11","NodeJS","MongoDB");
+        console.log(obj.sub_one,obj.sub_two,obj.sub_three);        //Angular11 NodeJS MongoDB
+        const obj2 = new class_one("ReactJS","Deno","CassandraDB");
+        console.log(obj2.sub_one,obj2.sub_two,obj2.sub_three);     //ReactJS Deno CassandraDB
+        const obj3 = new class_one("VueJS","NodeJS","MySql");
+        console.log(obj3.sub_one,obj3.sub_two,obj.sub_three);      //VueJS NodeJS MongoDB
+    </script>
+ -->
+<!-- 
+ <script>
+     function class_one(){
+         this.getSubOne = function(){
+             return "ReactJS";
+         };
+         this.getSubTwo = function(){
+             return "NodeJS";
+         };
+         this.getSubThree = function(){
+             return "MongoDB";
+         };
+     };
+     let obj = new class_one();
+     console.log( obj.getSubOne(),obj.getSubTwo(),obj.getSubThree() );      //ReactJS NodeJS MongoDB
+ </script>
+ -->
+
+ <!--
+     acquiring the properties from parent class to child class called as "prototype".
+ -->
+<!-- 
+    <script>
+        function class_one(){
+
+        };
+        class_one.prototype.var_one = "Hello_1";
+        function class_two(){
+
+        };
+        class_two.prototype = Object.create(class_one.prototype);
+        class_two.prototype.var_two = "Hello_2";
+        
+        let obj = new class_two();
+        console.log(obj.var_one,obj.var_two);      //Hello_1 Hello_2
+    </script>
+
+ <script>
+     function class_one(){
+
+     };
+     class_one.prototype.var_one = "Hello_1";
+     class_one.prototype.fun_one = function(){
+         return "Hello_2";
+     };
+     function class_two(){
+
+     };
+     class_two.prototype = Object.create(class_one.prototype);
+     class_two.prototype.var_two = "Hello_3";
+     class_two.prototype.fun_two = function(){
+         return "Hello_4";
+     };
+     let obj = new class_two();
+     console.log(obj.var_one,obj.var_two,obj.fun_one(),obj.fun_two());      //Hello_1 Hello_3 Hello_2 Hello_4
+ </script>
+  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
