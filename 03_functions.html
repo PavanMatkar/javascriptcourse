@@ -421,28 +421,101 @@
      functionality overloading
      same function with different argument called as function overloading
  -->
+<!-- 
+    <script>
+        function class_one(){
 
- <script>
-     function class_one(){
+        };
+        class_one.prototype.add = function(arg1,arg2){
+            return arg1 + arg2;
+        };
+        class_one.prototype.add = function(arg1,arg2,arg3){
+            return arg1 + arg2 + arg3;
+        };
+        class_one.prototype.add = function(arg1,arg2,arg3,arg4){
+            return arg1 + arg2 + arg3 + arg4;
+        };
+        let obj = new class_one();
+        console.log( obj.add(10,10) );         //NaN
+        console.log( obj.add(10,10,10) );      //NaN
+        console.log( obj.add(10,10,10,10) );   //40
+    </script>
+ -->
+<!--
+    Generator Functions
+        - it is used to control the flow of execution inside function call, then we will choose Generators.
+        - Generator Functions will prefix with "*".
+        - inside Generator functions, each statement will prefix with "yield".     
 
-     };
-     class_one.prototype.add = function(arg1,arg2){
-         return arg1 + arg2;
-     };
-     class_one.prototype.add = function(arg1,arg2,arg3){
-         return arg1 + arg2 + arg3;
-     };
-     class_one.prototype.add = function(arg1,arg2,arg3,arg4){
-         return arg1 + arg2 + arg3 + arg4;
-     };
-     let obj = new class_one();
-     console.log( obj.add(10,10) );         //NaN
-     console.log( obj.add(10,10,10) );      //NaN
-     console.log( obj.add(10,10,10,10) );   //40
- </script>
+    <script>
+        function * fun_one(){
+            yield "Hello_1";
+            yield "Hello_2";
+            yield "Hello_3";
+            yield "Hello_4";
+            yield "Hello_5";
+        };
+        let cursor = fun_one();
+        console.log( cursor.next() );       //{value: "Hello_1", done: false}
+        console.log( cursor.next() );       //{value: "Hello_2", done: false}
+        console.log( cursor.next() );       //{value: "Hello_3", done: false}
+        console.log( cursor.next() );       //{value: "Hello_4", done: false}
+        console.log( cursor.next() );       //{value: "Hello_5", done: false}
+        console.log( cursor.next() );       //{value: undefined, done: true}
+    </script>
 
+<script>
+    function *fun_one(){
+        yield "Hello_1";
+    };
+    
+    function *fun_two(){
+        yield "Hello_2";
+    };
+    function *fun_three(){
+        yield "Hello_3";
+    };
+    function *my_fun(){
+        yield *fun_two();
+        yield *fun_three();
+        yield *fun_one();
+    };
+    let cursor = my_fun();
+    console.log( cursor.next() );       //{value: "Hello_2", done: false}
+    console.log( cursor.next() );       //{value: "Hello_3", done: false}
+    console.log( cursor.next() );       //{value: "Hello_1", done: false}
+    console.log( cursor.next() );       //{value: undefined, done: true}
+</script>
 
-
+<script>
+    function *fun_one(){
+        yield 100;
+        yield 200;
+        yield 300;
+        return "Hello";
+        yield 400;
+    };
+    let cursor = fun_one();
+    console.log( cursor.next() );       //{value: 100, done: false}
+    console.log( cursor.next() );       //{value: 200, done: false}
+    console.log( cursor.next() );       //{value: 300, done: false}
+    console.log( cursor.next() );       //{value: "Hello", done: true}
+    console.log( cursor.next() );       //{value: undefined, done: true}
+</script>
+-->
+<!--
+    Optional Parameters
+        - while calling the functions, few parameters are optional.
+        - optional parameters are introduced in "ES6".
+        - we will represent Optional Parameters by using "?".
+        - Default value of Optional Parameter is "undefined".
+        - Optional Parameters will work in "Typescript" Environment.
+        - we will save "Typescript" files with ".ts" extension.
+        - conversion of "Typescript" to equalent "Javascript" called as "Transpilation".
+        - "tsc" stands for Typescript Compiler.
+        => we will install typescript by using following command.
+            > npm install -g typescript
+-->
 
 
 
