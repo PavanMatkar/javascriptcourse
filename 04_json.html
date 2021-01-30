@@ -1,0 +1,102 @@
+<!--
+    JSON stands for Java Script Object Notation.
+    JSON used to transfer the data over the network.
+    JSON is light weight.
+    JSON also called as Java Script Objects. 
+
+Syntax
+    Objects ==>{}
+    Arrays ==> []
+    data ==> key & value pairs
+             key & value separated by using ":"
+             key & value pairs separated by using ","
+-->
+<!-- 
+    <script>
+        let obj = {
+            sub_one: "ReactJS",
+            sub_two: "NodeJS",
+            sub_three: "MongoDB"
+        };
+        console.log( obj.sub_one, obj.sub_two, obj.sub_three );     //ReactJS NodeJS MongoDB
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            key1 : "Hello_1",
+            key2 : "Hello_2",
+            key3 : "Hello_3"
+        };
+        console.log( typeof obj );      //object
+
+        //conversion from object to string
+        let str = JSON.stringify(obj);
+        console.log(typeof str);        //string
+
+        //conversion from string to object
+        let obj1 = JSON.parse(str);
+        console.log(typeof obj1);       //object
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            f_end : "ReactJS",
+            b_end : "Deno",
+            d_base : "NoSQL"
+        };
+        // for...in loop
+        for(let key in obj){
+            console.log(key,typeof key, obj[key]);     // f_end string ReactJS, b_end string Deno, d_base string NoSQ
+        };
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj = {
+            key1: "Hello_1"
+        };
+        Object.freeze(obj);
+        //read
+        console.log(obj);       //{key1: "Hello_1"}
+
+        //write
+        obj.key2 = "Hello_2";
+        console.log(obj);       //{key1: "Hello_1"}
+
+        //update
+        obj.key1 = "Hello_2";
+        console.log(obj);       //{key1: "Hello_1"}
+
+        //delete
+        delete obj.key1;
+        console.log(obj);       //{key1: "Hello_1"}
+    </script> 
+-->
+
+<!--
+    seal()
+
+<script>
+    let obj = {
+        key1: "Hello_1"
+    };
+    Object.seal(obj);
+
+    //read
+    console.log(obj.key1);      //Hello_1
+
+    //update
+    obj.key1 = "Hello_2";
+    console.log(obj.key1);      //Hello_2
+
+    //write
+    obj.key2 = "Hello_2";
+    console.log(obj)        //{key1: "Hello_2"}
+
+    //delete
+    delete obj.key1;
+    console.log(obj);       //{key1:"Hello_2"}
+</script>
+-->
