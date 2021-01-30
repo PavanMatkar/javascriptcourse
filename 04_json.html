@@ -100,3 +100,109 @@ Syntax
     console.log(obj);       //{key1:"Hello_2"}
 </script>
 -->
+
+<!--
+    define Property()
+
+<script>
+    let obj = {
+        key1: "Hello_1"
+    };
+    Object.defineProperty(obj,"key2",{value:"Hello_2",writable:false});
+    console.log(obj);       //{key1: "Hello_1", key2: "Hello_2"}
+    obj.key1 = "Welcome";
+    obj.key2 = "Hi";
+    console.log(obj);       //{key1: "Hello_1" key2: "Hello_2"}
+</script>
+-->
+<!--
+    defineProperties()
+-->
+<!-- 
+    <script>
+        let obj = {
+            key1: "Hello_1"
+        };
+        Object.defineProperties(obj,{"key2":{value:"Hello_2",writable:false},
+                                    "key3":{value:"Hello_3",writable:true}});
+        console.log(obj);       //{key1: "Hello_1", key2: "Hello_2", key3: "Hello_3"}
+        obj.key1 = "Welcome_1";
+        obj.key2 = "Welcome_2";
+        obj.key3 = "Welcome_3";
+        console.log(obj);       //{key1: "Welcome_1", key2: "Hello_2", key3: "Welcome_3"}
+        delete obj.key1;
+        delete obj.key2;
+        delete obj.key3;
+        console.log(obj);       //{key2: "Hello_2", key3: "Welcome_3"}
+    </script> 
+-->
+<!-- 
+    <script>
+        let obj1 = {
+            key1: "Hello_1"
+        };
+        //immutability
+        let obj2 = {...obj1}
+        console.log(obj1);      //{key1: "Hello_1"} 
+        console.log(obj2);      //{key1: "Hello_1"}
+
+        obj1.key1 = "Welcome_1";
+        console.log(obj1);      //{key1: "Welcome_1"} 
+        console.log(obj2);      //{key1: "Hello_1"}
+    </script>
+ -->
+<!-- 
+    <script>
+        let obj1 = {key1:"Hello_1"};
+        //mutability
+        let obj2 = obj1;
+        obj1.key1 = "Welcome_1";
+        obj2.key1 = "Hello_2";
+        console.log(obj1);      //{key1: "Hello_2"}
+        console.log(obj2);      //{key1: "Hello_2"}
+    </script>
+ -->
+<!-- 
+    <script>
+        let obj1 = {key1: "Hello_1"};
+        let obj2 = {key2: "Hello_2"};
+        let obj3 = {key3: "Hello_3"};
+        let obj = {...obj1,...obj2,...obj3};        //ES6
+        console.log(obj);       //{key1: "Hello_1", key2: "Hello_2", key3: "Hello_3"}
+    </script>
+ -->
+<!-- 
+    <script>
+        let config = {
+            "Login" : Login
+        };
+        function Login(){
+            return "Welcome to Login Module"
+        };
+        console.log(config.Login());       //Welcome to Login Module
+    </script>
+ -->
+
+<script>
+    let db = {
+        "oracle" : ()=>{return "Oracle Connection Soon...!"},
+        "mysql"  : ()=>{return "MySQL Connection Soon...!"},
+        "sqlserver" : ()=>{return "SQLServer Connection Soon...!"},
+        "mongodb" : ()=>{return "MongoDB Connection Soon...!"}
+    };
+    console.log(db.oracle(),db.mysql(),db.sqlserver(),db.mongodb());
+    //Oracle Connection Soon...! MySQL Connection Soon...! SQLServer Connection Soon...! MongoDB Connection Soon...!
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
