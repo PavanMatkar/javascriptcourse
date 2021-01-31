@@ -9,12 +9,12 @@
 /*
     let promise1 = new Promise((resolve,reject)=>{
         resolve("tomorrow i will discuss async & await keyword");
-    });
-    promise1.then((posRes)=>{
+    });                                                 //creating the promise
+    promise1.then((posRes)=>{                           //consuming the promise
         console.log(posRes);
     },(errRes)=>{
         console.log(errRes);
-    });
+    });                         //tomorrow i will discuss async & await keyword
 */
 /*
     let promise1 = new Promise((resolve,reject)=>{
@@ -26,7 +26,7 @@
         console.log(posRes);
     },(errRes)=>{
         console.log(errRes);
-    });                         //Hello
+    });                         //Hello (after 5 seconds)
 */
 
     let promise1 = new Promise((resolve,reject)=>{
@@ -44,31 +44,48 @@
             resolve("Promise3");
         },10000);
     });
+
+/*    
     promise1.then((posRes)=>{
         console.log(posRes);
     },(errRes)=>{
         console.log(errRes);
-    });
+    });                         //Promise1
 
     promise2.then((posRes)=>{
         console.log(posRes);
     },(errRes)=>{
         console.log(errRes);
-    });
+    });                         //Error
 
     promise3.then((posRes)=>{
         console.log(posRes);
     },(errRes)=>{
         console.log(errRes);
-    });
-
+    });                         //Promise3
+*/
 /*
-Promise.all([promise1,promise2,promise3]).then((posRes)=>{
+    Promise.all([promise1,promise2,promise3]).then((posRes)=>{
+        console.log(posRes);
+    },(errRes)=>{
+        console.log(errRes);
+    });
+*/
+/*
+Promise.allSettled([promise1,promise2,promise3]).then((posRes)=>{
     console.log(posRes);
 },(errRes)=>{
     console.log(errRes);
 });
-*/
+*/                                //    [{ status: 'fulfilled', value: 'Promise1' },
+                                   //     { status: 'rejected', reason: 'Error' },
+                                   //     { status: 'fulfilled', value: 'Promise3' }
+                                   //                                                 ]
+Promise.race([promise1,promise2,promise3]).then((posRes)=>{
+    console.log(posRes);
+},(errRes)=>{
+    console.log(errRes);
+});                         //Promise1
 
 
 
