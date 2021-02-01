@@ -109,7 +109,7 @@ console.log(res);
 };
 my_fun();           //Hello, welcome to async & await keywords
 */
-
+/*
 let promise1 = new Promise((resolve,reject)=>{
     setTimeout(()=>{
         resolve("Promise.....!");
@@ -132,6 +132,7 @@ const data3 = await promise3;
 console.log(data1,data2,data3);     //Promise.....! Promise....2 Promise....3
 };
 my_fun();
+*/
 
 
 
