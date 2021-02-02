@@ -1,4 +1,18 @@
 /*
+    Optional Parameters
+        - while calling the functions, few parameters are optional.
+        - optional parameters are introduced in "ES6".
+        - we will represent Optional Parameters by using "?".
+        - Default value of Optional Parameter is "undefined".
+        - Optional Parameters will work in "Typescript" Environment.
+        - we will save "Typescript" files with ".ts" extension.
+        - conversion of "Typescript" to equalent "Javascript" called as "Transpilation".
+        - "tsc" stands for Typescript Compiler.
+        => we will install typescript by using following command.
+            > npm install -g typescript
+*/
+
+/*
     function fun_one(arg1?:string,arg2?:string,arg3?:string):void{
         console.log(arg1,arg2,arg3);
     };
