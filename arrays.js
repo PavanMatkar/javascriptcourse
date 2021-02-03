@@ -194,6 +194,79 @@ findIndex()
     console.log(arr3.slice(-10,-9));    //[ 100 ]
     console.log(arr3.slice(-1));        //[ 10000 ]
 */
+/*
+//copyWithin()
+let arr1 = [10,20,30,40,50,60,70,80,90,100];
+arr1.copyWithin(3);
+console.log(arr1);      //[10, 20, 30, 10, 20, 30, 40, 50, 60, 70]
+let arr2 = [10,20,30,40,50,60,70,80,90,100];
+arr2.copyWithin(5);
+console.log(arr2);      //[10, 20, 30, 40, 50, 10, 20, 30, 40, 50]
+let arr3 = [10,20,30,40,50,60,70,80,90,100];
+arr3.copyWithin(10);
+console.log(arr3);      //[10, 20, 30, 40,  50, 60, 70, 80, 90, 100]
+let arr4 = [10,20,30,40,50,60,70,80,90,100];
+arr4.copyWithin(0);
+console.log(arr4);      //[10, 20, 30, 40,  50, 60, 70, 80, 90, 100]
+let arr5 = [10,20,30,40,50,60,70,80,90,100];
+arr5.copyWithin(2,5);
+console.log(arr5);      //[10, 20, 60, 70,  80, 90, 100, 80, 90, 100]
+let arr6 = [10,20,30,40,50,60,70,80,90,100];
+arr6.copyWithin(1,4);
+console.log(arr6);      //[10, 50, 60, 70,  80, 90, 100, 80, 90, 100]
+let arr7 = [10,20,30,40,50,60,70,80,90,100];
+arr7.copyWithin(8,9);
+console.log(arr7);      //[10, 20, 30,  40,  50, 60, 70, 80, 100, 100]
+let arr8 = [10,20,30,40,50,60,70,80,90,100];
+arr8.copyWithin(2,4,7);
+console.log(arr8);      //[10, 20, 50, 60,  70, 60, 70, 80, 90, 100]
+let arr9 = [10,20,30,40,50,60,70,80,90,100];
+arr9.copyWithin(0,0,10);
+console.log(arr9);      //[10, 20, 30, 40,  50, 60, 70, 80, 90, 100]
+*/
+/*
+    //includes()
+    console.log([10,20,30,40,50].includes(30));     //true
+    console.log(["Angular","NodeJS","ReactJS","VueJS","MongoDB",].includes("Angular11"));    //false
+*/
+/*
+    // sort()
+    console.log([10,50,20,40,30].sort((arg1,arg2)=>{
+        return arg1-arg2;
+    }));        //[ 10, 20, 30, 40, 50 ]
+    console.log([10,50,20,40,30].sort((arg1,arg2)=>{
+        return arg2-arg1;
+    }));        //[ 50, 40, 30, 20, 10 ]
+    console.log([10,50,20,40,30].sort((arg1,arg2)=>{
+        return arg1-arg2;
+    })[0]);     //10 (min element)
+    console.log([10,50,20,40,30].sort((arg1,arg2)=>{
+        return arg2-arg1;
+    })[0]);     //50 (max element)
+*/
+/*
+//indexOf()
+    let arr1 = [10,20,10,40,20,30,10,20];
+    arr1.forEach((element,index)=>{
+        console.log(arr1.indexOf(element));
+    });     //0 1 0 3 1 5 0 1
+    let arr2 = [40,80,20,40,20,50,10,80,40];
+    arr2.forEach((element,index)=>{
+        console.log(arr2.indexOf(element));
+    });     //0 1 2 0 2 5 6 1 0
+    let arr3 = [10,20,30,10,20,30];
+    console.log(arr3.filter((element,index)=>{
+        return arr3.indexOf(element) == index;
+    }))     //[ 10, 20, 30 ]
+    let arr4 = [10,30,20,10,50,10,30];
+    console.log(arr4.filter((element,index)=>{
+        return arr4.indexOf(element)===index;
+    }).sort((arg1,arg2)=>{
+        return arg2 - arg1;
+    }));        //[ 50, 30, 20, 10 ]
+*/
+
+
 
 
 
