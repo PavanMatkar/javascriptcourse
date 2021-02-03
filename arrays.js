@@ -333,10 +333,67 @@ console.log(arr);       //[ 10, 20, <1 empty item>, 40, 50 ]
     console.log(Array.from("Hello").reverse().toString().replace(",",""));      //ol,l,e,H
     console.log(Array.from("Hello").reverse().toString().replace(/,/g,""));     //olleH
 */
+/*
+    //repeat()
+    console.log("10".repeat(2));        //1010
+    console.log("Hello".repeat(5));     //HelloHelloHelloHelloHello
+*/
+/*
+    //lastIndexOf()
+    let arr = [10,20,30,40,50,10,20,30,40,50];
+    console.log(arr.lastIndexOf(10));       //5
+    console.log(arr.lastIndexOf(20));       //6
+    console.log(arr.lastIndexOf(60));       //-1
+*/
+/*
+    console.log(
+        Array.from("Hello").reverse().join("")
+        );        //[ 'H', 'e', 'l', 'l', 'o' ]
+                //[ 'o', 'l', 'l', 'e', 'H' ]
+                //o,l,l,e,H       (toString())
+                //olleH           ( join() )
+*/
+/*
+    console.log(" Hello ".length);              //7
+    console.log(" Hello ".trim().length);       //5
+    console.log(" Hello ".trimStart().length);  //6
+    console.log(" Hello ".trimEnd().length);    //6
+*/
+/*
+    console.log("Hello".padStart(10,"*"));        //*****Hello
+    console.log("Hello".padEnd(20,"ReactJS"));    //HelloReactJSReactJSR
+*/
+/*
+    console.log("Hello Hello".split(" "));      //[ 'Hello', 'Hello' ]
+    console.log("He,l,|,l,o".replace(/,/g,"").replace("|","").split(""));   //[ 'H', 'e', 'l', 'l', 'o' ]
+*/
+/*
+    console.log(
+        "Welcome to ReactJS".substr(0,7),
+        "Welcome to ReactJS".substr(8,2),
+        "Welcome to ReactJS".substr(11)
+    );              //Welcome to ReactJS
+*/
+/*
+    console.log(
+        "Hello Welcome to Angular11".substring(0,5),
+        "Hello Welcome to Angular11".substring(6,13),
+        "Hello Welcome to Angular11".substring(14,16),
+        "Hello Welcome to Angular11".substring(17)
+    );                  //Hello Welcome to Angular11
+*/
 
+// for...in
+let obj = {"key1": "Hello_1",
+           "key2": "Hello_2",
+           "key3": "Hello_3"};
+for(let key in obj){
+    console.log(obj[key]);
+};      //Hello_1 Hello_2 Hello_3
 
-
-
+for(let x of [10,20,30,40,50]){
+    console.log(x);
+};      //10 20 30 40 50
 
 
 
