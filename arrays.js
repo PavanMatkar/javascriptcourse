@@ -265,6 +265,79 @@ console.log(arr9);      //[10, 20, 30, 40,  50, 60, 70, 80, 90, 100]
         return arg2 - arg1;
     }));        //[ 50, 30, 20, 10 ]
 */
+/*
+//length
+//used to know the length of array
+
+    let arr = [10,20,30,40,50,60,70,80,90,100];
+    console.log(arr.length);        //10
+    console.log(arr[0],arr[4],arr[9]);      //10 50 100
+    console.log(arr[10],arr[-1]);       //undefined undefined
+
+    arr.length = 5;
+    console.log(arr.length);        //5
+    console.log(arr[0],arr[4],arr[5]);      //10 50 undefined
+*/
+/*
+//delete
+let arr = [10,20,30,40,50];
+console.log(arr.length);        //5
+
+delete arr[2];
+console.log(arr);       //[ 10, 20, <1 empty item>, 40, 50 ]
+*/
+/*
+//fill()
+//    - replace the elements 
+    let arr = [10,20,30,40,50];
+    arr.fill(100);
+    console.log(arr);       //[ 100, 100, 100, 100, 100 ]
+    arr.fill(200,2);
+    console.log(arr);       //[ 100, 100, 200, 200, 200 ]
+    arr.fill(300,1,3);
+    console.log(arr);       //[ 100, 300, 300, 200, 200 ]
+*/
+/*
+//flat()
+    let arr = [[1], [2,3], [4], [5,6]];
+    console.log(arr.flat(1).reduce((a,b)=>{
+        return a+b;
+    }));                //21
+
+    let arr = [1,[[[[[[[[[[2]]]]]]]]]]];
+    console.log(arr.flat(Infinity).reduce((arg1,arg2)=>{
+        return arg1+arg2;
+    }));                //3
+
+    let arr1 = [1,2,3,4,5];
+    let arr2 = ["one","two","three","four","five"];
+
+    console.log(arr1.map((element,index)=>{
+        return [element,arr2[index]];
+    }));        //[[1,'one'],[2,'two'],[3,'three'],[4,'four'],[5,'five']]       
+
+    console.log(arr1.map((element,index)=>{
+        return [element,arr2[index]];
+    }).flat(1));        //[ 1, 'one', 2, 'two', 3, 'three', 4, 'four', 5, 'five']
+
+    console.log(arr1.flatMap((element,index)=>{
+        return [element,arr2[index]];
+    }));                //[ 1, 'one', 2, 'two', 3, 'three', 4, 'four', 5, 'five']
+*/
+/*
+    //reverse
+    let arr = [10,20,30,40,50];
+    console.log(arr.reverse());     //[ 50, 40, 30, 20, 10 ]
+
+    console.log(Array.from("Hello").reverse().join(""));        //olleH
+    console.log(Array.from("Hello").reverse().toString().replace(",",""));      //ol,l,e,H
+    console.log(Array.from("Hello").reverse().toString().replace(/,/g,""));     //olleH
+*/
+
+
+
+
+
 
 
 
