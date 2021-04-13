@@ -137,7 +137,7 @@ splice()
 */
 /*
 findIndex()
-    - to find the index of partucular element.
+    - to find the index of particular element.
 
     let arr = [10,20,30,40,50];
     console.log(arr.findIndex((element,index)=>{
@@ -382,19 +382,19 @@ console.log(arr);       //[ 10, 20, <1 empty item>, 40, 50 ]
         "Hello Welcome to Angular11".substring(17)
     );                  //Hello Welcome to Angular11
 */
+/*
+    // for...in
+    let obj = {"key1": "Hello_1",
+            "key2": "Hello_2",
+            "key3": "Hello_3"};
+    for(let key in obj){
+        console.log(obj[key]);
+    };      //Hello_1 Hello_2 Hello_3
 
-// for...in
-let obj = {"key1": "Hello_1",
-           "key2": "Hello_2",
-           "key3": "Hello_3"};
-for(let key in obj){
-    console.log(obj[key]);
-};      //Hello_1 Hello_2 Hello_3
-
-for(let x of [10,20,30,40,50]){
-    console.log(x);
-};      //10 20 30 40 50
-
+    for(let x of [10,20,30,40,50]){
+        console.log(x);
+    };      //10 20 30 40 50
+*/
 
 
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Events Example</title>
+    </head>
+    <body>
+        <div id="parent" style="width: 300px;height:300px;border: 1px solid red; color:red; text-align: center;">
+            Parent Div 
+            <div id="child" style="width: 200px;height:200px;border: 1px solid green; color:green; text-align: center; margin: 40px;">
+                Child Div 
+                <div id="subchild" style="width: 100px;height:100px;border: 1px solid blue; color:blue; text-align: center; margin: 40px;">
+                    SubChild Div
+                </div>
+            </div>
+        </div>
+
+        <!-- <script>
+            // Event Bubbling
+            let parent = document.getElementById("parent");
+            parent.addEventListener("click",()=>{
+                console.log("parent");
+            });
+
+            let child = document.getElementById("child");
+            child.addEventListener("click",()=>{
+                console.log("child");
+            });
+            let subchild = document.getElementById("subchild");
+            subchild.addEventListener("click",()=>{
+                console.log("subchild");
+            });
+        </script> -->
+
+        <script>
+            // Event Capturing
+            let parent = document.querySelector("#parent");
+            let child = document.querySelector("#child");
+            let subchild = document.querySelector("#subchild");
+            parent.addEventListener("click",(event)=>{
+                console.log('parent');
+            },true);
+            child.addEventListener("click",(event)=>{
+                console.log('child');
+            },true);
+            subchild.addEventListener("click",(event)=>{
+                console.log('subchild');
+            },true);
+        </script>
+
+    </body>
+</html>
