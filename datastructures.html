@@ -1,0 +1,127 @@
+<!--
+    if we use more than one "json key" in json object, automatically old values overriding with latest values.
+    
+    to overcome above overriding, we are using data structures.
+    1) Map  - map allows all "datatypes" as keys
+    2) WeakMap - weakMap allows only "JSON" as keys
+    3) Set - set wont allows the duplicate values
+    4) WeakSet - 
+
+
+<script>
+    let obj = {};
+
+    let key1 = {};
+    let value1 = "Hello_1";
+    obj[key1] = value1;
+
+    let key2 = {};
+    let value2 = "Hello_2";
+    obj[key2] = value2;
+
+    console.log(obj);       //overriding issue
+</script>
+-->
+<!--
+<script>
+    let map = new Map();
+    console.dir(map);
+
+    //clear()  - to clear the data from map
+    //Map()     - map constructor to create the object to the map
+    //delete()     - to delete particular key
+    //entries()  & forEach() & for...of()   - to iterate the map
+    //get()     - to get the particular key
+    //has()     - to check whether the key existed or not 
+    //keys()     - to get all the keys
+    //set()     - set function is used to set the data to the map
+    //size      - size property is used to know the size of the map
+    //values()      - to get all the values
+</script>
+-->
+<!--
+<script>
+    let map = new Map();
+
+    key1 = {};
+    value1 = "Hello_1";
+    map.set(key1,value1);
+
+    key2 = {};
+    value2 = "Hello_2";
+    map.set(key2,value2);
+
+    console.log(map);
+</script>
+-->
+<!--
+<script>
+    let map = new Map();
+
+    map.set("key1","Hello_1")
+        .set("key2","Hello_2")
+        .set("key3","Hello_3")
+        .set("key4","Hello_4")
+        .set("key5","Hello_5")
+
+        console.log(map);
+        console.log(map.size);
+        console.log(map.has("key5"));
+        console.log(map.delete("key5"));
+        console.log(map.has("key5"));
+        console.log([...map.keys()]);
+        console.log([...map.values()]);
+        console.log(map.get("key1"));
+
+        for (let [k,v] of map){
+            console.log(k,v);
+        };
+</script>
+-->
+
+
+<!--
+<script>
+// WeakMap will allow only Json Object as the key
+    let weakMap = new WeakMap();
+    console.dir(weakMap);
+
+    //WeakMap()     - constructor to create object to weakMap
+    //delete()      - to delete particular key
+    //get()         - to get particular key 
+    //has()         - to check whether the key existed in weakMap
+    //set()         - to set data in the weakMap
+</script>
+-->
+<!--
+<script>
+    // let weakMap = new WeakMap();
+
+    // weakMap.set({},"Hello_1")
+    //         .set({},"Hello_2");
+    // console.log(weakMap);
+
+    let weakMap = new WeakMap();
+    weakMap.set("key1","Hello_1");
+    console.log(weakMap);       //datastructures.html:105 Uncaught TypeError: Invalid value used as weak map key at WeakMap.set (<anonymous>)
+</script>
+-->
+<!--
+    Set
+    ===
+        - Set won't allows the duplicate values 
+-->
+<script>
+    let set = new Set();
+    console.dir(set);
+
+    //add() - to add the data to the Set datastructures 
+    //clear() -  to clear the data from the Set datastructures
+    //Set() - constructor to create the object to the Set 
+    //delete() - to delete particular keys
+    //entries() , forEach() , for...of() - to iterate
+    //has() - to check whether the particular key present or not
+    //keys() - to get all the keys 
+    //size -  to know the size 
+    //values - to get all the values
+</script>

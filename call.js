@@ -1,3 +1,4 @@
+// call() apply() bind()
 // to establish relationship between one memory location to another memory location we use call function
 // instead of supplying independent values if you want to supply entire array then we use apply function
 // if we want to merge two memory location and create a new memory location with the combination of previous two then we use bind function.
