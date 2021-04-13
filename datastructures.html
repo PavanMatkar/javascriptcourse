@@ -111,6 +111,7 @@
     ===
         - Set won't allows the duplicate values 
 -->
+<!--
 <script>
     let set = new Set();
     console.dir(set);
@@ -123,5 +124,70 @@
     //has() - to check whether the particular key present or not
     //keys() - to get all the keys 
     //size -  to know the size 
-    //values - to get all the values
+    //values() - to get all the values
+</script>
+-->
+<!--
+<script>
+    let set = new Set();
+    set.add(10)
+        .add(20)
+        .add(30)
+        .add(10)
+        .add(20)
+        .add(30)
+    console.log([...set]);      //[10,20,30]
+</script>
+-->
+<!--
+<script>
+    console.log([...new Set([10,20,30,10,20,30])]);     //[10, 20, 30]
+</script>
+-->
+<!--
+<script>
+    let set = new Set();
+    set.add(10)
+        .add(20)
+        .add(30);
+    console.log(set);           //{10, 20, 30}
+
+    set.delete(30);
+    console.log(set);           //{10, 20}
+
+    console.log(set.has(30));    //false
+
+    console.log(set.keys());       //{10, 20}
+
+    console.log( set.values() );    //{10, 20}
+
+    for(let v of set){
+        console.log(v);
+    };                          // 10  20
+
+    set.clear();
+    console.log(set);       //{}
+</script>
+-->
+
+<!--
+<script>
+    // weakSet is used to add only JSON data
+    let weakSet = new WeakSet();
+    console.dir(weakSet);
+
+    //add() - used to add data
+    //weakSet() - constructor used to create object to the weakSet
+    //delete() - used to delete the data
+    //has() - used to check whether the data is present or not
+</script>
+-->
+
+<script>
+    let weakSet = new WeakSet();
+    weakSet.add({"key1":"Hello_1"})
+            .add({"key2":"Hello_2"})
+            .add({"key3":"Hello_3"}) 
+            .add(40);       //Invalid value used in weak set at WeakSet.add
+    console.log(weakSet);
 </script>
