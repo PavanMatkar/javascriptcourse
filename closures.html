@@ -1,0 +1,45 @@
+<!--
+    a function inside another function called as inner functions.
+
+    inner function have capability to access the outer function data then accessing nature technically called as "closure".
+-->
+<!--
+<script>
+    function fun_one(){
+        let arg1 = "Hello_1";
+        let arg2 = "Hello_2";
+
+        return ()=>{
+            console.log(arg1);
+            console.log(arg2);
+        };
+    };
+    
+    console.dir(fun_one());             //Closure (fun_one) {arg1: "Hello_1"}
+                                        //Closure (fun_one) {arg1: "Hello_1", arg2: "Hello_2"}
+</script>
+-->
+
+<!-- <script>
+    for(var i=0;i<5;i++){
+        setTimeout(()=>{
+            console.log(i);
+        },5000);
+    };
+</script> -->
+<!-- <script>
+for (let i=0;i<5;i++){
+    setTimeout(()=>{
+        console.log(i);
+    },5000);
+};
+</script> -->
+<script>
+for(var i=0;i<5;i++){
+    ((i)=>{
+    setTimeout(()=>{
+        console.log(i);
+    },5000)
+})(i);
+};
+</script>
