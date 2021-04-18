@@ -16,6 +16,7 @@
 
         <!-- <script>
             // Event Bubbling
+            //propagation of event from down to up (child to parent) called as event bubbling
             let parent = document.getElementById("parent");
             parent.addEventListener("click",()=>{
                 console.log("parent");
@@ -33,6 +34,7 @@
 
         <script>
             // Event Capturing
+            //propagation of events from up to down (parent to child) is called as event bubbling
             let parent = document.querySelector("#parent");
             let child = document.querySelector("#child");
             let subchild = document.querySelector("#subchild");
