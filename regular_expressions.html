@@ -1,0 +1,24 @@
+<script>
+    console.log("1234567891".match(/^\d{10}$/) );
+    //if above criteria matches it will return array otherwise null
+
+    // phone number validations    
+    console.log("111-111-1111".match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/));  
+    console.log("111 111 1111".match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/));
+    console.log("111.111.1111".match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/));
+
+    console.log("111111111".match(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/));       //null
+
+    //Credit card validation (American Express)
+    console.log("341111111111111".match(/^(?:3[47][0-9]{13})$/));
+    console.log("371111111111111".match(/^(?:3[47][0-9]{13})$/));
+    console.log("381111111111111".match(/^(?:3[47][0-9]{13})$/));       //null
+
+    //date validation
+    console.log("11/12/2021".match(/^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/));
+    console.log("01-01-202".match(/^(0?[1-9]|1[012])[\/\-](0?[1-9]|[12][0-9]|3[01])[\/\-]\d{4}$/));     //null
+
+    //checking for letters and numbers 
+    console.log("1111111111".match(/^[0-9a-zA-Z]+$/));
+    console.log("1111111abc".match(/^[0-9a-zA-Z]+$/));
+</script>
